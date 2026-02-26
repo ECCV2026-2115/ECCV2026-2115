@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <title>Diffusion<sup>2</sup>: Dual Diffusion Model with Uncertainty-Aware Adaptive Noise for Momentary Trajectory Prediction</title>
   <style>
     body {
@@ -109,10 +111,7 @@
   <figure>
     <img src="images/table_1.png" alt="Table Results" style="max-width: 100%;">
     <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
-      Comparisons of various approaches on multiple datasets. The evaluation results are reported as ADE/FDE (m).
-      Compared with previous methods, <i>Diffusion<sup>2</sup></i> first uses a dual-head parameterization mechanism to estimate the uncertainty of historical trajectory predictions. 
-      Then, the adaptive noise scheduling module dynamically adjusts the forward noise addition process according to the uncertainty. 
-      Through these modules, the framework ensures the extraction and learning of effective features, thereby ensuring the quality of trajectory generation.
+      Comparisons of various approaches on multiple datasets. The evaluation results are reported as ADE/FDE (m). The best result is highlighted in bold, and the runner-up is <u>underlined</u>.
     </figcaption>
   </figure>
 
@@ -130,12 +129,7 @@
   <figure>
     <img src="images/experiment_2.png" alt="Experiment Visual 2" style="width: 85%; display: block; margin: 0 auto;">
     <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
-      The learned schedules of <b>&lambda;<sub>m</sub></b> and <b>l<sub>m</sub></b> over the diffusion steps <b>m</b>. 
-      The colour gradient — from blue (low predictive uncertainty) to red (high predictive uncertainty) — highlights how the model adapts its noise-injection strategy to the input’s uncertainty level. 
-      For low-uncertainty inputs (blue curves), <b>l<sub>m</sub></b> rises steeply, so stronger noise is injected early in the forward process. 
-      Conversely, high-uncertainty inputs (red curves) show a slower increase, delaying and attenuating the injected noise. 
-      The underlying reason for this attenuation is that highly uncertain inputs must preserve fragile signal features; 
-      by adding less noise, the model avoids drowning these features and enables the reverse process to recover them more reliably during reconstruction.
+      A visualization of the learned <b>&lambda</b> and <b>l</b> over diffusion step <b>m</b>, where each \( l_m = \operatorname{sigmoid}(\gamma_{\varphi}(\mathbf{u}, m)) \).
     </figcaption>
   </figure>
 
