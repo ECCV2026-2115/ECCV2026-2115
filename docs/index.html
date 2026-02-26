@@ -154,19 +154,7 @@
   <figure>
     <img src="images/table_2.png" alt="Ablation Study" style="width: 70%; display: block; margin: 0 auto;">
     <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
-      <p>
-        We start by using two independent diffusion models to predict the unobserved history and future trajectories. 
-        Then, we add the LANS module while keeping the uncertainty estimation disabled. 
-        On the ETH/UCY dataset, we observe a slight performance drop, suggesting that without explicit uncertainty guidance, 
-        LANS may lack meaningful modulation signals, which can impair the noise injection process and affect future trajectory quality. 
-        On the SDD dataset, however, LANS still brings mild improvement even without uncertainty, possibly due to its ability to adjust noise scale based on training dynamics in simpler open-space scenarios.
-      </p>
-
-      <p>
-        Finally, enabling both uncertainty estimation and LANS (i.e., the full <i>Diffusion<sup>2</sup></i>) yields the best performance on both datasets. 
-        This demonstrates that uncertainty-guided adaptive noise scheduling helps the model capture historical trajectory characteristics more effectively, 
-        leading to improved trajectory prediction accuracy.
-      </p>
+      Ablation study for our \( \textit{Diffusion}$^2$ \).
     </figcaption>
   </figure>
 
