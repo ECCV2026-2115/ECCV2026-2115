@@ -116,6 +116,13 @@
   </figure>
 
   <figure>
+    <img src="images/experiment_2.png" alt="Experiment Visual 2" style="width: 85%; display: block; margin: 0 auto;">
+    <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
+      A visualization of the learned \( \lambda \) and \( l \) over diffusion step \( m \), where each \( l_m = \operatorname{sigmoid}(\gamma_{\varphi}(\mathbf{u}, m)) \).
+    </figcaption>
+  </figure>
+
+  <figure>
     <img src="images/experiment_11.png" alt="Experiment Visual" style="max-width: 100%;">
     <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
       Visualization of predicted unobservable historical and future trajectories on the ETH/UCY dataset. 
@@ -127,9 +134,22 @@
   </figure>
 
   <figure>
-    <img src="images/experiment_2.png" alt="Experiment Visual 2" style="width: 85%; display: block; margin: 0 auto;">
+    <img src="images/experiment_11.png" alt="Experiment Visual" style="max-width: 100%;">
     <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
-      A visualization of the learned <b>&lambda</b> and <b>l</b> over diffusion step <b>m</b>, where each \( l_m = \operatorname{sigmoid}(\gamma_{\varphi}(\mathbf{u}, m)) \).
+      Visualization of predicted pedestrian trajectories across several scenes in the HOTEL dataset. 
+      Given the observed past (green, dashed), we show the ground-truth future (red, solid) and the model’s randomly sampled predictions (cyan, dashed). 
+      Trajectories are sampled from $\textit{Diffusion}$^2$$ and rendered after de-normalization to the scene frame.
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/experiment_11.png" alt="Experiment Visual" style="max-width: 100%;">
+    <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
+      Visualization of predicted unobservable historical and future trajectories on the ETH/UCY dataset. 
+      The red lines represent the unobserved historical trajectories, while the cyan lines denote the observed historical trajectories. 
+      The ground truth future trajectories are marked in light blue. 
+      Predictions from <i>Diffusion<sup>2</sup></i> are visualized as blue dashed lines for future and orange dashed lines for history, 
+      whereas the PCCSNet predictions are highlighted in magenta dashed lines.
     </figcaption>
   </figure>
 
