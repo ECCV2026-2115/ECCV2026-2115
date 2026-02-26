@@ -134,7 +134,7 @@
   </figure>
 
   <figure>
-    <img src="images/experiment_11.png" alt="Experiment Visual" style="max-width: 100%;">
+    <img src="images/multimodal.png" alt="Experiment Visual" style="max-width: 100%;">
     <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
       Visualization of predicted pedestrian trajectories across several scenes in the HOTEL dataset. 
       Given the observed past (green, dashed), we show the ground-truth future (red, solid) and the model’s randomly sampled predictions (cyan, dashed). 
@@ -143,13 +143,11 @@
   </figure>
 
   <figure>
-    <img src="images/experiment_11.png" alt="Experiment Visual" style="max-width: 100%;">
+    <img src="images/failure_case.png" alt="Experiment Visual" style="max-width: 100%;">
     <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
-      Visualization of predicted unobservable historical and future trajectories on the ETH/UCY dataset. 
-      The red lines represent the unobserved historical trajectories, while the cyan lines denote the observed historical trajectories. 
-      The ground truth future trajectories are marked in light blue. 
-      Predictions from <i>Diffusion<sup>2</sup></i> are visualized as blue dashed lines for future and orange dashed lines for history, 
-      whereas the PCCSNet predictions are highlighted in magenta dashed lines.
+      Visualization of predicted pedestrian trajectories across several scenes in ETH dataset (failure cases). 
+      Given the observed past (green, dashed), We show the ground-truth future (red, solid) and the model’s best-of-20 predicted trajectory. 
+      Trajectories are sampled from $\textit{Diffusion}$^2$$ and rendered after de-normalization to the scene frame.
     </figcaption>
   </figure>
 
