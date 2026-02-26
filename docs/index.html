@@ -94,15 +94,11 @@
   <figure>
     <img src="images/model.png" alt="Overall Architecture" style="max-width: 100%;">
     <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
-      The overview of our proposed \( \textit{Diffusion}^2 \):  
-      (a) <b>Framework</b>: \( \textit{Diffusion}^2 \) consists of two sequentially connected diffusion models, \( {DDPM}_{past} \) and \( {DDPM}_{fut} \). 
-      \( {DDPM}_{past} \) simultaneously reconstructs the unobserved historical trajectory <b>x<sup>ubs</sup><sub>0</sub></b> and estimates its associated uncertainty <b>u</b>. 
-      Then, \( {DDPM}_{fut} \) predicts the future trajectories <b>y<sub>0</sub></b>. Both diffusion models share a common encoder that extracts contextual features <b>h<sub>1</sub></b> from the observed history <b>x<sup>obs</sup></b>, 
-      while \( {DDPM}_{fut} \) employs an additional trajectory encoder to extract features <b>v<sub>1</sub></b> from the predicted unobserved historical trajectory <b>x<sup>ubs</sup><sub>0</sub></b>.  
-      (b) <b>Dual-head Parameterization Mechanism</b>: The standard noise prediction network is augmented with two output heads, one for predicting noise and the other for predicting variance, 
-      which corresponds to aleatoric uncertainty.  
-      (c) <b>Learned Adaptive Noise Scheduling</b>: A gamma module takes <b>u</b> and the diffusion step <b>m</b> as inputs and dynamically modulates the noise scale in the forward diffusion process of DDPM<sub>fut</sub>. 
-      Note that the red dashed line indicates the unobserved historical trajectory, with gray shading representing its uncertainty, while the green and blue dashed lines denote the observed history and future trajectories, respectively.
+      The overview of our proposed \( \textit{Diffusion}^2 \):
+      (a) <b>Framework</b>: \( \textit{Diffusion}^2 \) consists of two sequentially connected diffusion models, \( {DDPM}_{past} \) and \( {DDPM}_{fut} \); 
+      (b) <b>Dual-head Parameterization Mechanism</b>;
+      (c) <b>Learnable Temporally Adaptive Noise Scheduling<\b>. Note that the red dashed line indicates the unobserved historical trajectory, with gray shading representing its uncertainty, 
+      while the green and blue dashed lines denote the observed history and future trajectories, respectively.
     </figcaption>
   </figure>
   
