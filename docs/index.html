@@ -70,12 +70,12 @@
     However, in many real-world scenarios, such as the sudden emergence of pedestrians from blind spots, obtaining sufficient observational data remains difficult,
     making accurate prediction a persistent challenge and even contributing to traffic accidents.
     Therefore, advancing research on pedestrian trajectory prediction under extreme scenarios is critical for enhancing traffic safety.
-    In this work, we propose a novel framework termed <em>Diffusion<sup>2</sup></em>, tailored for momentary trajectory prediction.
-    <em>Diffusion<sup>2</sup></em> consists of two sequentially connected diffusion models: one for <em>backward prediction</em>, which generates unobserved historical trajectories,
-    and the other for <em>forward prediction</em>, which forecasts future trajectories.
+    In this work, we propose a novel framework termed \( \textit{Diffusion}^2 \), tailored for momentary trajectory prediction.
+    \( \textit{Diffusion}^2 \) consists of two sequentially connected diffusion models: one for \( \textit{backward prediction} \), which generates unobserved historical trajectories,
+    and the other for \( \textit{forward prediction} \), which forecasts future trajectories.
     Given that the generated unobserved historical trajectories may introduce additional noise,
     we propose a dual-head parameterization mechanism to estimate their aleatoric uncertainty and design an adaptive noise module that dynamically modulates the noise scale in the forward diffusion process.
-    Empirically, <em>Diffusion<sup>2</sup></em> sets a new state-of-the-art in momentary trajectory prediction on ETH/UCY and Stanford Drone datasets.
+    Empirically, \( \textit{Diffusion}^2 \) sets a new state-of-the-art in momentary trajectory prediction on ETH/UCY and Stanford Drone datasets.
   </p>
 
   <h2>Introduction</h2>
@@ -85,7 +85,7 @@
       Three distinct frameworks are proposed to address momentary trajectory prediction. 
       (a) The model directly utilizes observable trajectories to predict future trajectories. 
       (b) The approach jointly predicts unobservable historical trajectories and future trajectories. 
-      (c) Our proposed framework, <i>Diffusion<sup>2</sup></i>, consists of two sequentially connected diffusion models: one dedicated to <i>backward prediction</i>, and the other to <i>forward prediction</i>.
+      (c) Our proposed framework, \( \textit{Diffusion}^2 \), consists of two sequentially connected diffusion models: one dedicated to \( \textit{backward prediction} \), and the other to \( \textit{forward prediction} \).
     </figcaption>
   </figure>
   
@@ -94,11 +94,11 @@
   <figure>
     <img src="images/model.png" alt="Overall Architecture" style="max-width: 100%;">
     <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
-      The overview of our proposed <i>Diffusion<sup>2</sup></i>:  
-      (a) <b>Framework</b>: <i>Diffusion<sup>2</sup></i> consists of two sequentially connected diffusion models, DDPM<sub>past</sub> and DDPM<sub>fut</sub>. 
-      DDPM<sub>past</sub> simultaneously reconstructs the unobserved historical trajectory <b>x<sup>ubs</sup><sub>0</sub></b> and estimates its associated uncertainty <b>u</b>. 
-      Then, DDPM<sub>fut</sub> predicts the future trajectories <b>y<sub>0</sub></b>. Both diffusion models share a common encoder that extracts contextual features <b>h<sub>1</sub></b> from the observed history <b>x<sup>obs</sup></b>, 
-      while DDPM<sub>fut</sub> employs an additional trajectory encoder to extract features <b>v<sub>1</sub></b> from the predicted unobserved historical trajectory <b>x<sup>ubs</sup><sub>0</sub></b>.  
+      The overview of our proposed \( \textit{Diffusion}^2 \):  
+      (a) <b>Framework</b>: \( \textit{Diffusion}^2 \) consists of two sequentially connected diffusion models, \( {DDPM}_{past} \) and \( {DDPM}_{fut} \). 
+      \( {DDPM}_{past} \) simultaneously reconstructs the unobserved historical trajectory <b>x<sup>ubs</sup><sub>0</sub></b> and estimates its associated uncertainty <b>u</b>. 
+      Then, \( {DDPM}_{fut} \) predicts the future trajectories <b>y<sub>0</sub></b>. Both diffusion models share a common encoder that extracts contextual features <b>h<sub>1</sub></b> from the observed history <b>x<sup>obs</sup></b>, 
+      while \( {DDPM}_{fut} \) employs an additional trajectory encoder to extract features <b>v<sub>1</sub></b> from the predicted unobserved historical trajectory <b>x<sup>ubs</sup><sub>0</sub></b>.  
       (b) <b>Dual-head Parameterization Mechanism</b>: The standard noise prediction network is augmented with two output heads, one for predicting noise and the other for predicting variance, 
       which corresponds to aleatoric uncertainty.  
       (c) <b>Learned Adaptive Noise Scheduling</b>: A gamma module takes <b>u</b> and the diffusion step <b>m</b> as inputs and dynamically modulates the noise scale in the forward diffusion process of DDPM<sub>fut</sub>. 
@@ -128,7 +128,7 @@
       Visualization of predicted unobservable historical and future trajectories on the ETH/UCY dataset. 
       The red lines represent the unobserved historical trajectories, while the cyan lines denote the observed historical trajectories. 
       The ground truth future trajectories are marked in light blue. 
-      Predictions from <i>Diffusion<sup>2</sup></i> are visualized as blue dashed lines for future and orange dashed lines for history, 
+      Predictions from \( \textit{Diffusion}^2 \) are visualized as blue dashed lines for future and orange dashed lines for history, 
       whereas the PCCSNet predictions are highlighted in magenta dashed lines.
     </figcaption>
   </figure>
@@ -138,7 +138,7 @@
     <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
       Visualization of predicted pedestrian trajectories across several scenes in the HOTEL dataset. 
       Given the observed past (green, dashed), we show the ground-truth future (red, solid) and the model’s randomly sampled predictions (cyan, dashed). 
-      Trajectories are sampled from $\textit{Diffusion}$^2$$ and rendered after de-normalization to the scene frame.
+      Trajectories are sampled from \( \textit{Diffusion}^2 \) and rendered after de-normalization to the scene frame.
     </figcaption>
   </figure>
 
@@ -147,14 +147,14 @@
     <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
       Visualization of predicted pedestrian trajectories across several scenes in ETH dataset (failure cases). 
       Given the observed past (green, dashed), We show the ground-truth future (red, solid) and the model’s best-of-20 predicted trajectory. 
-      Trajectories are sampled from $\textit{Diffusion}$^2$$ and rendered after de-normalization to the scene frame.
+      Trajectories are sampled from \( \textit{Diffusion}^2 \) and rendered after de-normalization to the scene frame.
     </figcaption>
   </figure>
 
   <figure>
     <img src="images/table_2.png" alt="Ablation Study" style="width: 70%; display: block; margin: 0 auto;">
     <figcaption style="text-align: justify; font-size: 14px; color: #444444;">
-      Ablation study for our \( \textit{Diffusion}$^2$ \).
+      Ablation study for our \( \textit{Diffusion}^2 \).
     </figcaption>
   </figure>
 
